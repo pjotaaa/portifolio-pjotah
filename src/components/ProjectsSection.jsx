@@ -36,7 +36,7 @@ const ProjectsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: 0.3 }}
             >
-              Exemplos de automações
+              Projetos
             </motion.span>
           </h2>
           <div className="hidden md:block h-px bg-border flex-grow ml-8 transition-colors duration-300"></div>
