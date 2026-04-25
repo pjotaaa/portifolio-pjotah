@@ -18,16 +18,16 @@ const ContactSection = () => {
           <p className="text-secondary font-sans text-lg mb-12 max-w-2xl mx-auto transition-colors duration-300">
             Tem um processo travado, uma ideia não executada ou um sistema que precisa nascer? Me manda uma mensagem.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
             <a href={`mailto:${contact.email}`} className="w-full sm:w-auto px-8 py-4 bg-primary-container text-background font-mono font-bold hover:bg-primary transition-colors text-center shadow-lg">
               {contact.email}
             </a>
             <a href={contact.whatsapp.link} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 border border-border text-on-surface font-mono font-bold hover:border-primary-container transition-colors text-center shadow-lg bg-background/20 backdrop-blur-sm">
-              WhatsApp: {contact.whatsapp.number}
+              {contact.whatsapp.number}
             </a>
           </div>
-          
+
           <div className="flex justify-center space-x-8 font-mono text-sm">
             <a href={contact.github} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary-container transition-colors uppercase tracking-widest">GitHub</a>
             <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary-container transition-colors uppercase tracking-widest">LinkedIn</a>
