@@ -16,8 +16,8 @@ const Footer = () => {
         className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-full flex justify-center pointer-events-none select-none"
       >
         <span 
-          className="font-display font-black leading-none text-[var(--color-footer-text)] transition-colors duration-300"
-          style={{ fontSize: "clamp(80px, 15vw, 160px)" }}
+          className="font-display font-black leading-none text-[var(--color-footer-text)] transition-colors duration-300 whitespace-nowrap"
+          style={{ fontSize: "clamp(30px, 20vw, 160px)" }}
         >
           PJOTAH
         </span>
