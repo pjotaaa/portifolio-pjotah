@@ -20,7 +20,7 @@
     --color-tag-border: #f7b5c5;
     --color-cursor: rgba(255, 43, 85, 0.3);
   }
-  
+
   .dark {
     --color-bg: #0a0a0f;
     --color-surface: #0e0e18;
@@ -40,10 +40,19 @@
   body {
     @apply bg-background text-on-surface font-sans antialiased selection:bg-primary-container selection:text-background cursor-none transition-colors duration-300;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display text-on-surface;
   }
-  a, button, [role="button"] {
+
+  a,
+  button,
+  [role="button"] {
     cursor: none;
   }
 }
