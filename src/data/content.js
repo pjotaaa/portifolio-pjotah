@@ -58,7 +58,7 @@ export const contact = {
   email: "artist.pjotah@gmail.com",
   whatsapp: {
     number: "(17) 98190-6479",
-    link: "https://wa.me/5517981906479"
+    link: "https://wa.me/5517981906479?text=Olá, vi seu portfólio e quero conversar sobre um projeto"
   },
   github: "https://github.com/pjotaaa",
   linkedin: "https://www.linkedin.com/in/pjotah/",
