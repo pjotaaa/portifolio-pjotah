@@ -61,49 +61,69 @@ const ProjectsSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
             onClick={() => setSelectedProject(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-md"
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              initial={{ opacity: 0, scale: 0.92, y: 40 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 40 }}
+              transition={{ type: "spring", stiffness: 280, damping: 28 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-5xl bg-surface border border-border rounded-lg overflow-hidden flex flex-col md:flex-row shadow-2xl"
+              className="relative w-[95vw] max-w-6xl max-h-[90vh] bg-surface border border-border overflow-hidden flex flex-col shadow-2xl"
             >
-              <button 
+              {/* Close Button — grande e bem visível */}
+              <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-background border border-border text-on-surface rounded-full z-10 hover:border-primary-container transition-colors"
+                className="absolute top-5 right-5 z-20 flex items-center gap-2 px-4 py-2 bg-background/80 backdrop-blur-sm border border-border text-on-surface font-mono text-sm font-bold hover:border-primary-container hover:text-primary-container transition-colors"
               >
-                ✕
+                <span>✕</span>
+                <span>Fechar</span>
               </button>
-              
-              <div className="w-full md:w-3/5 bg-background relative aspect-video md:aspect-auto">
-                <img 
-                  src={selectedProject.image} 
+
+              {/* Image — takes up the top 55% */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.4 }}
+                className="w-full flex-shrink-0"
+                style={{ height: "55%" }}
+              >
+                <img
+                  src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
+                  style={{ minHeight: "300px", maxHeight: "500px" }}
                 />
-              </div>
-              
-              <div className="w-full md:w-2/5 p-8 flex flex-col justify-center">
-                <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <h3 className="text-2xl font-display font-bold text-on-surface">{selectedProject.title}</h3>
+              </motion.div>
+
+              {/* Details panel */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.4 }}
+                className="flex-1 p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6 overflow-y-auto border-t border-border"
+              >
+                <div className="flex-1">
+                  <h3 className="text-3xl md:text-4xl font-display font-bold text-on-surface mb-3">
+                    {selectedProject.title}
+                  </h3>
+                  <p className="text-secondary font-sans text-base leading-relaxed max-w-2xl">
+                    {selectedProject.description}
+                  </p>
                 </div>
-                <p className="text-secondary font-sans leading-relaxed mb-8">
-                  {selectedProject.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 md:justify-end">
                   {selectedProject.tags.map((tag, idx) => (
-                    <span 
-                      key={idx} 
+                    <span
+                      key={idx}
                       className="bg-[var(--color-tag-bg)] text-[var(--color-tag-text)] border border-[var(--color-tag-border)] text-xs px-3 py-1.5 font-mono rounded-sm transition-colors duration-300"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         )}
