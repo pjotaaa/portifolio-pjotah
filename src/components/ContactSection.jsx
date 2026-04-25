@@ -20,8 +20,11 @@ const ContactSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
-            <a href={`mailto:${contact.email}`} className="w-full sm:w-auto px-8 py-4 bg-primary-container text-background font-mono font-bold hover:bg-primary transition-colors text-center">
+            <a href={`mailto:${contact.email}`} className="w-full sm:w-auto px-8 py-4 bg-primary-container text-background font-mono font-bold hover:bg-primary transition-colors text-center shadow-lg">
               {contact.email}
+            </a>
+            <a href={contact.whatsapp.link} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 border border-border text-on-surface font-mono font-bold hover:border-primary-container transition-colors text-center shadow-lg bg-background/20 backdrop-blur-sm">
+              WhatsApp: {contact.whatsapp.number}
             </a>
           </div>
           
