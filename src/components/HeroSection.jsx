@@ -41,11 +41,26 @@ const HeroSection = () => {
     return () => unsubscribe();
   }, [playbackSpeed]);
 
-  // Morphing transforms for the video background
-  const videoWidth = useTransform(smoothProgress, [0, 1], ["100%", "40%"]);
-  const videoHeight = useTransform(smoothProgress, [0, 1], ["100%", "45%"]);
-  const videoLeft = useTransform(smoothProgress, [0, 1], ["0%", "55%"]);
-  const videoTop = useTransform(smoothProgress, [0, 1], ["0%", "27.5%"]);
+  // Mobile detection
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Desktop morphing (shrinks to right side)
+  const videoWidthDesktop = useTransform(smoothProgress, [0, 1], ["100%", "40%"]);
+  const videoHeightDesktop = useTransform(smoothProgress, [0, 1], ["100%", "45%"]);
+  const videoLeftDesktop = useTransform(smoothProgress, [0, 1], ["0%", "55%"]);
+  const videoTopDesktop = useTransform(smoothProgress, [0, 1], ["0%", "27.5%"]);
+
+  // Mobile morphing (shrinks to bottom half)
+  const videoWidthMobile = useTransform(smoothProgress, [0, 1], ["100%", "100%"]);
+  const videoHeightMobile = useTransform(smoothProgress, [0, 1], ["100%", "40%"]);
+  const videoLeftMobile = useTransform(smoothProgress, [0, 1], ["0%", "0%"]);
+  const videoTopMobile = useTransform(smoothProgress, [0, 1], ["0%", "60%"]);
   
   // Fade out the dark gradient overlays as the video shrinks
   const overlayOpacity = useTransform(smoothProgress, [0, 0.5], [1, 0]);
@@ -89,10 +104,10 @@ transform(chaos).into(clarity);\n\n`.repeat(20)}
         <motion.div 
           className="absolute z-10 overflow-hidden mix-blend-difference dark:mix-blend-screen"
           style={{
-            width: videoWidth,
-            height: videoHeight,
-            left: videoLeft,
-            top: videoTop
+            width: isMobile ? videoWidthMobile : videoWidthDesktop,
+            height: isMobile ? videoHeightMobile : videoHeightDesktop,
+            left: isMobile ? videoLeftMobile : videoLeftDesktop,
+            top: isMobile ? videoTopMobile : videoTopDesktop
           }}
           onClick={handleVideoClick}
         >
@@ -146,7 +161,7 @@ transform(chaos).into(clarity);\n\n`.repeat(20)}
             <p className="text-lg md:text-xl text-secondary font-sans mb-12 relative z-10 transition-colors duration-300 max-w-2xl drop-shadow-md">
               {hero.description}
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a href="#projects" className="px-6 py-3 bg-primary-container text-background font-mono font-bold rounded-none hover:bg-primary transition-colors shadow-lg">
                 Ver Projetos
               </a>
