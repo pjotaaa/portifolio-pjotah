@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="py-8 px-6 border-t border-border text-center relative overflow-hidden flex flex-col items-center justify-center min-h-[300px] bg-background transition-colors duration-300">
       <div className="font-mono text-xs text-secondary z-10 mb-8 mt-auto transition-colors duration-300">
-        © {new Date().getFullYear()} Pjotah. Desenvolvido com Precisão Técnica.
+        © 2026 Pjotah — Construído com React, Tailwind e muita cafeína.
       </div>
       
       <motion.div

@@ -8,10 +8,10 @@ export const hero = {
 export const about = {
   bio: `Meu trabalho começa onde os processos travam. Pego o que é manual, confuso ou desorganizado e construo soluções digitais que fazem sentido para quem vai usar no dia a dia. Não me interessa só fazer funcionar: quero que a solução seja fácil de usar, útil de verdade e que gere impacto real.`,
   stats: [
-    { number: "3+", label: "Years Experience" },
-    { number: "∞", label: "Coffee Consumed" },
-    { number: "01", label: "Obsession: Turning Ideas into Reality" },
-    { number: "0→1", label: "From Idea to Working Product" }
+    { number: "3+", label: "Anos de Experiência" },
+    { number: "∞", label: "Cafés Consumidos" },
+    { number: "01", label: "Obsessão: Transformar Ideias em Realidade" },
+    { number: "0→1", label: "Da Ideia ao Produto Funcional" }
   ]
 }
 
