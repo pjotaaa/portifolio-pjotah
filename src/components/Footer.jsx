@@ -13,7 +13,7 @@ const Footer = () => {
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-full flex justify-center pointer-events-none select-none"
+        className="absolute bottom-[-10%] inset-x-0 w-full flex justify-center pointer-events-none select-none"
       >
         <span 
           className="font-display font-black leading-none text-[var(--color-footer-text)] transition-colors duration-300 whitespace-nowrap"
