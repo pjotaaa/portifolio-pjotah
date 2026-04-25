@@ -22,7 +22,7 @@ Sistemas, automações e ideias que ninguém teve ainda.
 
 ![Hero Section](docs/preview-hero.png)
 
-> Animação 3D imersiva com efeito `mix-blend-difference` que inverte as cores de acordo com o tema (teal no dark mode, rosa vibrante no light mode). Easter egg: clique no vírus para uma aceleração surpresa.
+> Animação 3D imersiva com efeito `mix-blend-difference` que inverte as cores de acordo com o tema (tela no dark mode, rosa vibrante no light mode). Easter egg: clique no vírus para uma aceleração surpresa.
 
 ---
 
