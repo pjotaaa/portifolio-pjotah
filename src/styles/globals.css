@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #f3f4f6;
+    --color-surface: #ffffff;
+    --color-on-surface: #111827;
+    --color-primary: #007a63;
+    --color-primary-container: #009a7a;
+    --color-secondary: #4b5563;
+    --color-secondary-container: #4b5563;
+    --color-border: #d1d5db;
+    --color-footer-text: rgba(0, 0, 0, 0.05);
+    --color-tag-bg: #e0f2ec;
+    --color-tag-text: #007a63;
+    --color-tag-border: #b3e0d0;
+    --color-cursor: rgba(0, 154, 122, 0.3);
+  }
+  
+  .dark {
+    --color-bg: #0a0a0f;
+    --color-surface: #0e0e18;
+    --color-on-surface: #e3e0f4;
+    --color-primary: #46f1c5;
+    --color-primary-container: #00d4aa;
+    --color-secondary: #c8c5cd;
+    --color-secondary-container: #49484e;
+    --color-border: #1a1a28;
+    --color-footer-text: rgba(255, 255, 255, 0.05);
+    --color-tag-bg: #0a1f1a;
+    --color-tag-text: #00d4aa;
+    --color-tag-border: #0f3d2e;
+    --color-cursor: rgba(0, 212, 170, 0.1);
+  }
+
+  body {
+    @apply bg-background text-on-surface font-sans antialiased selection:bg-primary-container selection:text-background cursor-none transition-colors duration-300;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-on-surface;
+  }
+  a, button, [role="button"] {
+    cursor: none;
+  }
+}
