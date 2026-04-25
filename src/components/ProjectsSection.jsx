@@ -63,7 +63,7 @@ const ProjectsSection = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             onClick={() => setSelectedProject(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.92, y: 40 }}
@@ -71,59 +71,27 @@ const ProjectsSection = () => {
               exit={{ opacity: 0, scale: 0.92, y: 40 }}
               transition={{ type: "spring", stiffness: 280, damping: 28 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-[95vw] max-w-6xl max-h-[90vh] bg-surface border border-border overflow-hidden flex flex-col shadow-2xl"
+              className="relative w-[95vw] max-w-6xl max-h-[90vh] overflow-hidden shadow-2xl"
             >
-              {/* Close Button — grande e bem visível */}
+              {/* Close Button */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-5 right-5 z-20 flex items-center gap-2 px-4 py-2 bg-background/80 backdrop-blur-sm border border-border text-on-surface font-mono text-sm font-bold hover:border-primary-container hover:text-primary-container transition-colors"
+                className="absolute top-4 right-4 z-20 flex items-center gap-2 px-4 py-2 bg-black/70 backdrop-blur-sm border border-white/20 text-white font-mono text-sm font-bold hover:bg-black/90 transition-colors"
               >
                 <span>✕</span>
                 <span>Fechar</span>
               </button>
 
-              {/* Image — takes up the top 55% */}
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
+              {/* Full Image */}
+              <motion.img
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
-                className="w-full flex-shrink-0"
-                style={{ height: "55%" }}
-              >
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover object-top"
-                  style={{ minHeight: "300px", maxHeight: "500px" }}
-                />
-              </motion.div>
-
-              {/* Details panel */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.4 }}
-                className="flex-1 p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6 overflow-y-auto border-t border-border"
-              >
-                <div className="flex-1">
-                  <h3 className="text-3xl md:text-4xl font-display font-bold text-on-surface mb-3">
-                    {selectedProject.title}
-                  </h3>
-                  <p className="text-secondary font-sans text-base leading-relaxed max-w-2xl">
-                    {selectedProject.description}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2 md:justify-end">
-                  {selectedProject.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-[var(--color-tag-bg)] text-[var(--color-tag-text)] border border-[var(--color-tag-border)] text-xs px-3 py-1.5 font-mono rounded-sm transition-colors duration-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-full object-contain object-center block"
+                style={{ maxHeight: "90vh" }}
+              />
             </motion.div>
           </motion.div>
         )}
