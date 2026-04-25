@@ -10,7 +10,8 @@ export const about = {
   stats: [
     { number: "3+", label: "Years Experience" },
     { number: "∞", label: "Coffee Consumed" },
-    { number: "01", label: "Obsession: Turning Ideas into Reality" }
+    { number: "01", label: "Obsession: Turning Ideas into Reality" },
+    { number: "0→1", label: "From Idea to Working Product" }
   ]
 }
 
