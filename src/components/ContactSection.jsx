@@ -19,11 +19,11 @@ const ContactSection = () => {
             Tem um processo travado, uma ideia não executada ou um sistema que precisa nascer? Me manda uma mensagem.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
-            <a href={`mailto:${contact.email}`} className="w-full sm:w-auto px-8 py-4 bg-primary-container text-background font-mono font-bold hover:bg-primary transition-colors text-center shadow-lg">
+          <div className="flex flex-col sm:flex-row justify-center items-stretch gap-4 sm:gap-6 mb-16 w-full max-w-2xl mx-auto">
+            <a href={`mailto:${contact.email}`} className="flex-1 flex items-center justify-center px-6 py-4 bg-primary-container text-background font-mono font-bold hover:bg-primary transition-colors text-center shadow-lg">
               {contact.email}
             </a>
-            <a href={contact.whatsapp.link} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 border border-border text-on-surface font-mono font-bold hover:border-primary-container transition-colors text-center shadow-lg bg-background/20 backdrop-blur-sm">
+            <a href={contact.whatsapp.link} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center px-6 py-4 border border-border text-on-surface font-mono font-bold hover:border-primary-container transition-colors text-center shadow-lg bg-background/20 backdrop-blur-sm">
               {contact.whatsapp.number}
             </a>
           </div>
