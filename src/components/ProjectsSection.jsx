@@ -36,7 +36,7 @@ const ProjectsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: 0.3 }}
             >
-              Trabalhos em Destaque
+              Exemplos de automações
             </motion.span>
           </h2>
           <div className="hidden md:block h-px bg-border flex-grow ml-8 transition-colors duration-300"></div>
@@ -89,9 +89,6 @@ const ProjectsSection = () => {
               <div className="w-full md:w-2/5 p-8 flex flex-col justify-center">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <h3 className="text-2xl font-display font-bold text-on-surface">{selectedProject.title}</h3>
-                  <span className="bg-[var(--color-tag-bg)] text-[var(--color-primary-container)] border border-[var(--color-tag-border)] text-[10px] px-2 py-1 font-mono uppercase tracking-widest rounded-full">
-                    {selectedProject.statusLabel}
-                  </span>
                 </div>
                 <p className="text-secondary font-sans leading-relaxed mb-8">
                   {selectedProject.description}

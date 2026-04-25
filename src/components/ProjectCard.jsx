@@ -7,7 +7,7 @@ const item = {
 };
 
 const ProjectCard = ({ project, onClick }) => {
-  const isEvolving = project.status === 'evolving';
+
   
   return (
     <motion.div
@@ -17,17 +17,8 @@ const ProjectCard = ({ project, onClick }) => {
       className="bg-surface border border-border p-6 flex flex-col h-full relative group transition-colors duration-300"
     >
       <div className="absolute top-0 left-0 w-1 h-full bg-primary-container opacity-0 group-hover:opacity-100 transition-opacity" />
-      <div className="flex justify-between items-start mb-4 gap-4">
+      <div className="mb-4">
         <h3 className="text-xl font-display font-bold text-on-surface transition-colors duration-300 group-hover:text-primary-container">{project.title}</h3>
-        <div 
-          className={`px-3 py-1 text-[10px] font-mono font-bold tracking-widest uppercase border rounded-full whitespace-nowrap transition-colors duration-300 ${
-            isEvolving 
-              ? 'bg-[var(--color-tag-bg)] text-[var(--color-primary-container)] border-[var(--color-tag-border)]' 
-              : 'bg-black/5 dark:bg-white/5 text-secondary border-black/10 dark:border-white/10'
-          }`}
-        >
-          {project.statusLabel}
-        </div>
       </div>
       <p className="text-secondary font-sans text-sm mb-6 flex-grow transition-colors duration-300">
         {project.description}
